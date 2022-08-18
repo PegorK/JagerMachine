@@ -1,0 +1,9 @@
+[Unit]
+Description= --PK-- Ensure file exists on boot
+After=multi-user.target
+[Service]
+ExecStartPre=/var/www/custom_scripts/getWifiConfig.sh
+ExecStart=/usr/bin/python3 /var/www/custom_scripts/checkWifi.py
+User=root
+[Install]
+WantedBy=multi-user.target

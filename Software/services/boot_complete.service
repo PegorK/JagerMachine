@@ -1,0 +1,8 @@
+[Unit]
+Description= --PK-- Check if boot complete
+After=multi-user.target
+[Service]
+ExecStart=/var/www/custom_scripts/bootCheck.sh
+User=root
+[Install]
+WantedBy=multi-user.target

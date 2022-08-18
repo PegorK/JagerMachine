@@ -1,0 +1,7 @@
+[Unit]
+Description= --PK-- Handle LEDs on boot
+[Service]
+ExecStart=/usr/bin/python3 /var/www/custom_scripts/bootLed.py
+User=root
+[Install]
+WantedBy=multi-user.target

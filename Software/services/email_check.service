@@ -1,0 +1,8 @@
+[Unit]
+Description= --PK-- Checks if a new email has been received.
+After=multi-user.target wifi_check.service
+[Service]
+ExecStart=/usr/bin/python3 /var/www/custom_scripts/checkEmail.py
+User=root
+[Install]
+WantedBy=multi-user.target

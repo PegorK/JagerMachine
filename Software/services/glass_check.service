@@ -1,0 +1,9 @@
+[Unit]
+Description= --PK-- Checks if shot glass is present or not
+Requires=boot_complete.service
+After=multi-user.target boot_complete.service
+[Service]
+ExecStart=/var/www/custom_scripts/glassCheck.sh
+User=root
+[Install]
+WantedBy=multi-user.target
