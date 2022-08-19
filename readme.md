@@ -15,6 +15,7 @@ The build parts consist of:
 * [Hall Effect Sensor](https://www.amazon.com/gp/product/B096S7Y2KH/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)
 * [Motor Drive Module (for pump)](https://www.amazon.com/gp/product/B08RMWTDLM/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1)
 * [3.3V to 5V Level Shift (for LED ring)](https://www.amazon.com/HiLetgo-Channels-Converter-Bi-Directional-3-3V-5V/dp/B07F7W91LC)
+* USB Storage
 * (Optional) Custom PCB (Designed in DipTrace, ordered from PCBWay)
 * (Optional) Custom 3D Printed Parts (enclosures, nozzle, pump holder, fan holder)(Designed in Fusion360 ordered from CraftCloud)
 
@@ -55,3 +56,6 @@ The build parts consist of:
         ```
             systemctl enable /var/www/services/led_boot.service
         ```
+
+## Story
+
