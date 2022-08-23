@@ -8,10 +8,10 @@ The JägerMachine is an IoT shot pouring machine powered by a Raspberry Pi 3B+. 
 Initially this project started as a gift for a friend. We always give each other Jagermeister related gifts as an inside joke, so I figured this would be PERFECT. It started out as a pretty bland render I threw together on Fusion 360 as seen below and slowly started getting more and more complicated.
 
 
-<p align="center">
-  <img src="Images/render.png" alt="First Render" width="500"/>
+<div align="center">
+  <img src="Images/Render.png" alt="First Render" width="500"/>
   <br><b>Figure 1</b>: First render of the initial design.
-</p>
+</div>
 
 Unfortunately I didn't finish the project in time for my friends birthday (sorry Jon :( ), but I continued on and kept adding features and I think It's finally done! Some of the features currently supported are as mentioned above are:
 * Search for available WiFi connections and connect to them (see Figure 2 & 3).
@@ -20,49 +20,50 @@ Unfortunately I didn't finish the project in time for my friends birthday (sorry
 * Hall effect sensor to detect when shot glass is placed/removed.
 * Enable/Disable LEDs
 
-<table align="center">
-    <tr>
-        <td>
-            <p align="center">
-                <img src="Images/wifi_screen.png" alt="Wifi Search Screen" width="300"/>
-                <br><b>Figure 2.</b>: Available WiFi connections list.
-            </p>
-        </td>
-        <td>
-            <p align="center">
-                <img src="Images/wifi_login_screen.png" alt="Connect to Wifi" width="300"/>
-                <br><b>Figure 3</b>: Signing in to a WiFi connection.
-            </p>
-        </td>
-    <tr>
-</table>
-
+<div align="center">
+    <table align="center">
+        <tr>
+            <td>
+                <div align="center">
+                    <img src="Images/wifi_screen.png" alt="Wifi Search Screen" width="300"/>
+                    <br><b>Figure 2.</b>: Available WiFi connections list.
+                </div>
+            </td>
+            <td>
+                <div align="center">
+                    <img src="Images/wifi_login_screen.png" alt="Connect to Wifi" width="300"/>
+                    <br><b>Figure 3</b>: Signing in to a WiFi connection.
+                </div>
+            </td>
+        <tr>
+    </table>
+</div>
 The hardware for this build wasn't too complicated. I used a logic level shifter to drive the WS2812B LED Ring since it requires 5V logic and RPi outputs 3.3V logic and an H-Bridge Motor driver module for the pump. The only funky part was that I had to use a Hex-Invert IC since the pins I decided to use on the Raspberry Pi are normally high until they are configured as outputs. 
 
 To avoid having a ton of wires everywhere I designed a motherboard PCB that the breakout boards can easily pop onto. The files & schematic for this PCB are in the `Hardware` folder of this repo. The completed board can be seen below. 
 
-<p align="center">
+<div align="center">
     <img src="Images/internals_2.jpg" alt="PCB" width="350"/>
     <br><b>Figure 4</b>: PCB to connect all peripherals.
-</p>
+</div>
 
 Overall I'd say I got pretty close to the render and vision I originally had in mind. Below are a couple pictures of the JägerMachine booting and pouring a shot.
 
 
-<p align="center">
+<div align="center">
     <img src="Images/boot.png" alt="Booting" width="600"/>
     <br><b>Figure 5.</b>: JägerMachine booting.
-</p>
+</div>
 
-<p align="center">
+<div align="center">
     <img src="Images/pour_1.png" alt="Pouring a shot" width="600"/>
     <br><b>Figure 6.</b>: JägerMachine pouring a shot.
-</p>
+</div>
 
-<p align="center">
+<div align="center">
     <img src="Images/side_1.png" alt="Side view" width="600"/>
     <br><b>Figure 7.</b>: JägerMachine idle.
-</p>
+</div>
 
 
 
