@@ -21,7 +21,7 @@ Unfortunately I didn't finish the project in time for my friends birthday (sorry
 * Enable/Disable LEDs
 
 <div align="center">
-    <table align="center">
+    <table>
         <tr>
             <td>
                 <div align="center">
@@ -35,7 +35,7 @@ Unfortunately I didn't finish the project in time for my friends birthday (sorry
                     <br><b>Figure 3</b>: Signing in to a WiFi connection.
                 </div>
             </td>
-        <tr>
+        </tr>
     </table>
 </div>
 The hardware for this build wasn't too complicated. I used a logic level shifter to drive the WS2812B LED Ring since it requires 5V logic and RPi outputs 3.3V logic and an H-Bridge Motor driver module for the pump. The only funky part was that I had to use a Hex-Invert IC since the pins I decided to use on the Raspberry Pi are normally high until they are configured as outputs. 
