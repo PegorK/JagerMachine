@@ -5,6 +5,69 @@
 
 The JägerMachine is an IoT shot pouring machine powered by a Raspberry Pi 3B+. It features a full GUI that allows the user to configure the device, pour a shot, and also check previous messages sent to the machine. Once paired with it's own GMail account, the JägerMachine waits for emails containing a secret user defined subject line and a custom message that gets displayed on the screen. Once an email is received a shot is poured :) 
 
+Initially this project started as a gift for a friend. We always give each other Jagermeister related gifts as an inside joke, so I figured this would be PERFECT. It started out as a pretty bland render I threw together on Fusion 360 as seen below and slowly started getting more and more complicated.
+
+
+<p align="center">
+  <img src="Images/render.png" alt="First Render" width="500"/>
+  <br><b>Figure 1</b>: First render of the initial design.
+</p>
+
+Unfortunately I didn't finish the project in time for my friends birthday (sorry Jon :( ), but I continued on and kept adding features and I think It's finally done! Some of the features currently supported are as mentioned above are:
+* Search for available WiFi connections and connect to them (see Figure 2 & 3).
+* Manually pour a shot.
+* Pour a shot via email with a a message that gets displayed.
+* Hall effect sensor to detect when shot glass is placed/removed.
+* Enable/Disable LEDs
+
+<table align="center">
+    <tr>
+        <td>
+            <p align="center">
+                <img src="Images/wifi_screen.png" alt="Wifi Search Screen" width="300"/>
+                <br><b>Figure 2.</b>: Available WiFi connections list.
+            </p>
+        </td>
+        <td>
+            <p align="center">
+                <img src="Images/wifi_login_screen.png" alt="Connect to Wifi" width="300"/>
+                <br><b>Figure 3</b>: Signing in to a WiFi connection.
+            </p>
+        </td>
+    <tr>
+</table>
+
+The hardware for this build wasn't too complicated. I used a logic level shifter to drive the WS2812B LED Ring since it requires 5V logic and RPi outputs 3.3V logic and an H-Bridge Motor driver module for the pump. The only funky part was that I had to use a Hex-Invert IC since the pins I decided to use on the Raspberry Pi are normally high until they are configured as outputs. 
+
+To avoid having a ton of wires everywhere I designed a motherboard PCB that the breakout boards can easily pop onto. The files & schematic for this PCB are in the `Hardware` folder of this repo. The completed board can be seen below. 
+
+<p align="center">
+    <img src="Images/internals_2.jpg" alt="PCB" width="350"/>
+    <br><b>Figure 4</b>: PCB to connect all peripherals.
+</p>
+
+Overall I'd say I got pretty close to the render and vision I originally had in mind. Below are a couple pictures of the JägerMachine booting and pouring a shot.
+
+
+<p align="center">
+    <img src="Images/boot.png" alt="Booting" width="600"/>
+    <br><b>Figure 5.</b>: JägerMachine booting.
+</p>
+
+<p align="center">
+    <img src="Images/pour_1.png" alt="Pouring a shot" width="600"/>
+    <br><b>Figure 6.</b>: JägerMachine pouring a shot.
+</p>
+
+<p align="center">
+    <img src="Images/side_1.png" alt="Side view" width="600"/>
+    <br><b>Figure 7.</b>: JägerMachine idle.
+</p>
+
+
+
+<b>More detailed info on the Raspberry Pi setup can be found below and more pictures are available in the `Images` folder.<b>
+
 <br>
 
 
@@ -15,7 +78,7 @@ The build parts consist of:
 * [Hall Effect Sensor](https://www.amazon.com/gp/product/B096S7Y2KH/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)
 * [Motor Drive Module (for pump)](https://www.amazon.com/gp/product/B08RMWTDLM/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1)
 * [3.3V to 5V Level Shift (for LED ring)](https://www.amazon.com/HiLetgo-Channels-Converter-Bi-Directional-3-3V-5V/dp/B07F7W91LC)
-* USB Storage
+* USB Storage (used to store WiFi info)
 * (Optional) Custom PCB (Designed in DipTrace, ordered from PCBWay)
 * (Optional) Custom 3D Printed Parts (enclosures, nozzle, pump holder, fan holder)(Designed in Fusion360 ordered from CraftCloud)
 
@@ -56,6 +119,9 @@ The build parts consist of:
         ```
             systemctl enable /var/www/services/led_boot.service
         ```
+1) Edit the `emailConfig.py` file to your desired email configuration. You must use a GMail account that has two-factor authentication so you can use an app password. [More info on app passwords](https://support.google.com/accounts/answer/185833?hl=en)
 
-## Story
-
+### Contact
+[Buy me a Coffee!](https://www.buymeacoffee.com/pegor)
+<br>
+devPegor@gmail.com
