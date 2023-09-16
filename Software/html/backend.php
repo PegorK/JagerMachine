@@ -16,7 +16,6 @@
       $parameters2 = $_POST['parameter2'];
     }
     switch($function) {
-        case 'updateSystem': updateSystem($parameter); break;
         case 'checkEmail': checkEmail();break;
         case 'checkGlass': checkGlass();break;
         case 'getAvailableWifi': getAvailableWifi();break;
@@ -31,25 +30,6 @@
         case 'getIsShotPoured': getIsShotPoured(); break;
         case 'pourShot': pourShot(); break;
         case 'systemReboot': systemReboot(); break;
-    }
-  }
-
-  function updateSystem($parameter) {
-
-  }
-
-  function openDatabase() {
-    $servername = "localhost";
-    $username = "master";
-    $password = "climbhard";
-    $dbname = "peggyboardDB";
-    //Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-      return 0;
-    } else {
-      return $conn;
     }
   }
 
